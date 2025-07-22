@@ -11,8 +11,8 @@ import (
 	_ "github.com/lib/pq"
 	"github.com/sirupsen/logrus"
 
-	"github.com/gobulgur/sbs/pkg/kafka"
-	"github.com/gobulgur/sbs/services/underwriting"
+	"github.com/gobulgur/kafka-serves/pkg/kafka"
+	"github.com/gobulgur/kafka-serves/services/underwriting"
 )
 
 func main() {

@@ -3,7 +3,7 @@
 # Переменные
 DOCKER_COMPOSE = docker-compose
 GO_VERSION = 1.22
-PROJECT_NAME = sbs
+PROJECT_NAME = kafka-serves
 
 help: ## Показать справку
 	@echo "Доступные команды:"

@@ -66,7 +66,7 @@
 
 ```bash
 git clone <repository-url>
-cd sbs
+cd "kafka serves"
 
 # Установка зависимостей
 make deps
@@ -260,7 +260,7 @@ make kubernetes-deploy
 ### Структура проекта
 
 ```
-sbs/
+kafka serves/
 ├── cmd/                    # Точки входа приложений
 │   ├── gateway/           # HTTP Gateway
 │   ├── underwriting/      # Underwriting Consumer  

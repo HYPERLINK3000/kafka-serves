@@ -12,7 +12,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/sirupsen/logrus"
 
-	"github.com/gobulgur/sbs/pkg/kafka"
+	"github.com/gobulgur/kafka-serves/pkg/kafka"
 )
 
 // Handler обрабатывает события для расчёта страховых премий

@@ -1,4 +1,4 @@
-module github.com/gobulgur/sbs
+module github.com/gobulgur/kafka-serves
 
 go 1.22
 
