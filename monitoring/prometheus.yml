@@ -1,0 +1,52 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - "alert_rules.yml"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # - alertmanager:9093
+
+scrape_configs:
+  # Prometheus самого себя
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Kafka JMX метрики
+  - job_name: 'kafka-jmx'
+    static_configs:
+      - targets: 
+        - 'localhost:9101'  # kafka1
+        - 'localhost:9102'  # kafka2
+        - 'localhost:9103'  # kafka3
+
+  # Underwriting сервис
+  - job_name: 'underwriting-service'
+    static_configs:
+      - targets: ['localhost:8081']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # Billing сервис  
+  - job_name: 'billing-service'
+    static_configs:
+      - targets: ['localhost:8082']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # Gateway сервис
+  - job_name: 'gateway-service'
+    static_configs:
+      - targets: ['localhost:8080']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # PostgreSQL метрики (если используем postgres_exporter)
+  - job_name: 'postgres'
+    static_configs:
+      - targets: ['localhost:9187'] 
